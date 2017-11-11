@@ -1,4 +1,4 @@
-import urllib.request
+import urllib
 import os
 import zipfile
 
@@ -19,7 +19,7 @@ def download_net(data_dir):
 
     if not os.path.exists(local_zip_file):
         # Download
-        model_url = urllib.request.urlopen(url)
+        model_url = urllib.urlopen(url)
         with open(local_zip_file, 'wb') as output:
             output.write(model_url.read())
 
@@ -37,7 +37,7 @@ def download_vgg(data_dir):
 
     if not os.path.exists(local_file):
         # Download
-        model_url = urllib.request.urlopen(url)
+        model_url = urllib.urlopen(url)
         with open(local_file, 'wb') as output:
             output.write(model_url.read())
         print("VGG19 Downloaded Successfully")
